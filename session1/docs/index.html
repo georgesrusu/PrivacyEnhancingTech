@@ -1,0 +1,684 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to MPC’s documentation! &#8212; MPC 2018 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2018',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-mpc-s-documentation">
+<h1>Welcome to MPC’s documentation!<a class="headerlink" href="#welcome-to-mpc-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+<div class="section" id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-aes">
+<span id="aes"></span><h2>AES<a class="headerlink" href="#module-aes" title="Permalink to this headline">¶</a></h2>
+<p>LELEC2770 : Privacy Enhancing Technologies</p>
+<p>AES key representation library</p>
+<dl class="class">
+<dt id="aes.AES_key">
+<em class="property">class </em><code class="descclassname">aes.</code><code class="descname">AES_key</code><span class="sig-paren">(</span><em>rep_bytes</em><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>AES Key with multiple representations</p>
+<p>The supported formats are:</p>
+<ul class="simple">
+<li>bytes: byte string (bytes type)</li>
+<li>int: integer (int/long)</li>
+<li>bin_str: string of bits ‘0’/‘1’</li>
+<li>bin: list of bits [0/1]</li>
+<li>hex: string of hex digits (lowercase)</li>
+</ul>
+<p>The conversion between sequence and integer representations is in MSB order.</p>
+<dl class="method">
+<dt id="aes.AES_key.as_bin">
+<code class="descname">as_bin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.as_bin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the representation of the key as a binary list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list of 128 0 and 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="aes.AES_key.as_bin_str">
+<code class="descname">as_bin_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.as_bin_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the representation of the key as a binary string</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str of 128 “0” and “1”</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="aes.AES_key.as_bytes">
+<code class="descname">as_bytes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.as_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the representation of the key as byte string</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bytes object of length 16</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="aes.AES_key.as_hex">
+<code class="descname">as_hex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.as_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the representation of the key as an hexadecimal string</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string of 32 hexadecimal digits</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="aes.AES_key.as_int">
+<code class="descname">as_int</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.as_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the representation of the key as an integer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="aes.AES_key.decrypt">
+<code class="descname">decrypt</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrypt a message using the key</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>c</strong> (<em>bytes object whose length is multiple of 16</em>) – Message to decrypt</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Decrypted message</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bytes object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="aes.AES_key.encrypt">
+<code class="descname">encrypt</code><span class="sig-paren">(</span><em>m</em><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encrypt a message using the key</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> (<em>bytes object</em><em> (</em><em>of length multiple of 16</em><em>) or </em><em>int</em>) – Message to encrypt</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Encrypted message</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bytes object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="aes.AES_key.from_bin">
+<em class="property">classmethod </em><code class="descname">from_bin</code><span class="sig-paren">(</span><em>rep_bin</em><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.from_bin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an AES_key from its binary representation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#aes.AES_key" title="aes.AES_key">AES_key</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="aes.AES_key.from_bin_str">
+<em class="property">classmethod </em><code class="descname">from_bin_str</code><span class="sig-paren">(</span><em>rep_bin</em><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.from_bin_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an AES_key from its binary string representation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#aes.AES_key" title="aes.AES_key">AES_key</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="aes.AES_key.from_bytes">
+<em class="property">classmethod </em><code class="descname">from_bytes</code><span class="sig-paren">(</span><em>rep_bytes</em><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.from_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an AES_key from its bytes representation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#aes.AES_key" title="aes.AES_key">AES_key</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="aes.AES_key.from_hex">
+<em class="property">classmethod </em><code class="descname">from_hex</code><span class="sig-paren">(</span><em>rep_hex</em><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.from_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an AES_key from its hexadecimal string representation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#aes.AES_key" title="aes.AES_key">AES_key</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="aes.AES_key.from_int">
+<em class="property">classmethod </em><code class="descname">from_int</code><span class="sig-paren">(</span><em>rep_int</em><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.from_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an AES_key from its integer value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#aes.AES_key" title="aes.AES_key">AES_key</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="aes.AES_key.gen_random">
+<em class="property">classmethod </em><code class="descname">gen_random</code><span class="sig-paren">(</span><em>nbr_zero=108</em><span class="sig-paren">)</span><a class="headerlink" href="#aes.AES_key.gen_random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a random AES key.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nbr_zero</strong> (<em>int</em>) – number of leading bits at 0 in the key</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">AES key</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#aes.AES_key" title="aes.AES_key">AES_key</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-elgamal">
+<span id="el-gamal"></span><h2>El Gamal<a class="headerlink" href="#module-elgamal" title="Permalink to this headline">¶</a></h2>
+<p>LELEC2770 : Privacy Enhancing Technologies</p>
+<p>El Gamal encryption library</p>
+<dl class="class">
+<dt id="elgamal.ElgamalCiphertext">
+<em class="property">class </em><code class="descclassname">elgamal.</code><code class="descname">ElgamalCiphertext</code><span class="sig-paren">(</span><em>p</em>, <em>c1</em>, <em>c2</em><span class="sig-paren">)</span><a class="headerlink" href="#elgamal.ElgamalCiphertext" title="Permalink to this definition">¶</a></dt>
+<dd><p>El Gamal ciphertext.</p>
+<p>Thanks to group homomorphism, operations over plaintexts can be implemented
+in the ciphertext domain.
+For two ciphertexts ca, cb and an integer a,
+* ca+cb corresponds to plaintext addition (hence ciphertext multiplication)
+* a*ca corresponds to plaintext multiplication (hence ciphertext
+exponentiation)</p>
+<p>Available operations: addition, subtraction, negation, multiplication.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="elgamal.ElgamalPublicKey">
+<em class="property">class </em><code class="descclassname">elgamal.</code><code class="descname">ElgamalPublicKey</code><span class="sig-paren">(</span><em>G</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#elgamal.ElgamalPublicKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>El Gamal public key</p>
+<dl class="method">
+<dt id="elgamal.ElgamalPublicKey.encrypt">
+<code class="descname">encrypt</code><span class="sig-paren">(</span><em>m</em>, <em>r=None</em><span class="sig-paren">)</span><a class="headerlink" href="#elgamal.ElgamalPublicKey.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encrypt a message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>m</strong> (<em>int</em>) – plaintext</li>
+<li><strong>r</strong> (<em>int</em><em> or </em><em>None</em>) – optionnal random group element to use for encryption</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="elgamal.ElgamalPublicKey.random">
+<code class="descname">random</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#elgamal.ElgamalPublicKey.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a random group element.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="elgamal.ElgamalPublicKey.verifiability_proof">
+<code class="descname">verifiability_proof</code><span class="sig-paren">(</span><em>c</em>, <em>m</em>, <em>r</em>, <em>s=None</em>, <em>u=None</em>, <em>t=None</em><span class="sig-paren">)</span><a class="headerlink" href="#elgamal.ElgamalPublicKey.verifiability_proof" title="Permalink to this definition">¶</a></dt>
+<dd><p>This ZK proof ensures that c is a el_gamal on m = 0 or 1
+s,u,t are the randomness used in the proof (optional)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="elgamal.ElgamalPublicKey.verifiability_proof_check">
+<code class="descname">verifiability_proof_check</code><span class="sig-paren">(</span><em>c</em>, <em>proof</em><span class="sig-paren">)</span><a class="headerlink" href="#elgamal.ElgamalPublicKey.verifiability_proof_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the ZKP proof is correct with respect to c
+meaning that c is a el_gamal on either 0 or 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="elgamal.ElgamalSecretKey">
+<em class="property">class </em><code class="descclassname">elgamal.</code><code class="descname">ElgamalSecretKey</code><span class="sig-paren">(</span><em>G</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#elgamal.ElgamalSecretKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>El Gamal secret key.</p>
+<dl class="method">
+<dt id="elgamal.ElgamalSecretKey.decrypt">
+<code class="descname">decrypt</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#elgamal.ElgamalSecretKey.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrypt ciphertext c.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">plaintext</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="elgamal.dLog">
+<code class="descclassname">elgamal.</code><code class="descname">dLog</code><span class="sig-paren">(</span><em>p</em>, <em>g</em>, <em>g_m</em><span class="sig-paren">)</span><a class="headerlink" href="#elgamal.dLog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the discrete log of g_m with basis g, modulo p</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="elgamal.elgamal_param_gen">
+<code class="descclassname">elgamal.</code><code class="descname">elgamal_param_gen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#elgamal.elgamal_param_gen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an El Gamal keypair</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">(<a class="reference internal" href="#elgamal.ElgamalPublicKey" title="elgamal.ElgamalPublicKey">ElgamalPublicKey</a>, <a class="reference internal" href="#elgamal.ElgamalSecretKey" title="elgamal.ElgamalSecretKey">ElgamalSecretKey</a>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-garbled_circuit">
+<span id="garbled-circuit"></span><h2>Garbled circuit<a class="headerlink" href="#module-garbled_circuit" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="garbled_circuit.evaluate_garbled_circuit">
+<code class="descclassname">garbled_circuit.</code><code class="descname">evaluate_garbled_circuit</code><span class="sig-paren">(</span><em>circuit</em>, <em>myinputs</em>, <em>garbled_table</em>, <em>input_keys</em>, <em>ot_senders</em><span class="sig-paren">)</span><a class="headerlink" href="#garbled_circuit.evaluate_garbled_circuit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate a garbled circuit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>circuit</strong> (<a class="reference internal" href="#logic_circuit.Circuit" title="logic_circuit.Circuit"><em>logic_circuit.Circuit</em></a>) – circuit to evaluate</li>
+<li><strong>myinputs</strong> (<em>dictionnary {gate_id: 0/1}</em>) – known inputs, to be kept hidden</li>
+<li><strong>garbled_table</strong> (<em>dictionnary {gate_id: 4*</em><em>[</em><a class="reference internal" href="#aes.AES_key" title="aes.AES_key"><em>AES_key</em></a><em>]</em><em>}</em>) – Table of grabled logic gates</li>
+<li><strong>input_keys</strong> (<em>dictionnary {input_gate_id: AES_key}</em>) – ungarbling keys already known</li>
+<li><strong>ot_senders</strong> – OT senders to recover missing input keys using myinputs
+values</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">State of the evaluated circuit</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionnary {gate_id: gate_output_value}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&#64;student: What are the key steps in this function that make it such that
+the inputs of Bob are not revealed to Alice ?</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="garbled_circuit.garble_circuit">
+<code class="descclassname">garbled_circuit.</code><code class="descname">garble_circuit</code><span class="sig-paren">(</span><em>circuit</em>, <em>myinputs</em><span class="sig-paren">)</span><a class="headerlink" href="#garbled_circuit.garble_circuit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Garble a circuit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>circuit</strong> (<a class="reference internal" href="#logic_circuit.Circuit" title="logic_circuit.Circuit"><em>logic_circuit.Circuit</em></a>) – circuit to garble</li>
+<li><strong>myinputs</strong> (<em>dictionnary {gate_id: 0/1}</em>) – already known inputs, to be hidden</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Garbled circuit, ungarbling keys associated to myinputs and OT
+senders for other inputs.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(garbled_table, input_keys, ot_senders)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>garbled_table: dictionnary {gate_id: 4*[AES_key]}</li>
+<li>input_keys: dictionnary {input_gate_id: AES_key}</li>
+<li>ot_senders: dictionnary {input_gate_id: OT.Sender}</li>
+</ul>
+<p>&#64;student: What are the key steps in this function that make it such that
+the inputs of Alice are not revealed to Bob ?</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-logic_circuit">
+<span id="logic-circuit"></span><h2>Logic Circuit<a class="headerlink" href="#module-logic_circuit" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="logic_circuit.Circuit">
+<em class="property">class </em><code class="descclassname">logic_circuit.</code><code class="descname">Circuit</code><span class="sig-paren">(</span><em>g</em>, <em>output_gates</em><span class="sig-paren">)</span><a class="headerlink" href="#logic_circuit.Circuit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logic circuit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>g</strong> (<em>dictionnary {gate_id</em><em>, </em><em>Gate}</em>) – representation of the circuit</li>
+<li><strong>output_gates</strong> (<em>set of ids</em>) – ids of output gates</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="logic_circuit.Circuit.evaluate">
+<code class="descname">evaluate</code><span class="sig-paren">(</span><em>input_vals</em><span class="sig-paren">)</span><a class="headerlink" href="#logic_circuit.Circuit.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate logic circuit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>input_vals</strong> (<em>dictionnary {input_gate_id: 0/1}</em>) – values at the input of the circuit</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Circuit evalutation</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#logic_circuit.CircuitEvaluation" title="logic_circuit.CircuitEvaluation">CircuitEvaluation</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="logic_circuit.CircuitEvaluation">
+<em class="property">class </em><code class="descclassname">logic_circuit.</code><code class="descname">CircuitEvaluation</code><span class="sig-paren">(</span><em>circuit</em>, <em>input_vals</em><span class="sig-paren">)</span><a class="headerlink" href="#logic_circuit.CircuitEvaluation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object created by Circuit.evaluate.
+The state attribute is a dictionnary
+{gate_id: value_at_output_of_the_gate}.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="logic_circuit.Gate">
+<em class="property">class </em><code class="descclassname">logic_circuit.</code><code class="descname">Gate</code><span class="sig-paren">(</span><em>kind</em>, <em>in0_id</em>, <em>in1_id</em><span class="sig-paren">)</span><a class="headerlink" href="#logic_circuit.Gate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Binary logic gate or input gate</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>kind</strong> – “INPUT”, “AND”, “NAND”, “OR”, “NOR” or “XOR”</li>
+<li><strong>in0_id</strong> – id of the gate connected to the first input. None for an
+input gate.</li>
+<li><strong>in1_id</strong> – id of the gate connected to the second input. None for an
+input gate.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="classmethod">
+<dt id="logic_circuit.Gate.compute_gate">
+<em class="property">classmethod </em><code class="descname">compute_gate</code><span class="sig-paren">(</span><em>kind</em>, <em>in1</em>, <em>in2</em><span class="sig-paren">)</span><a class="headerlink" href="#logic_circuit.Gate.compute_gate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the output of a gate given its kind and the values at its
+input.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="logic_circuit.test_circuit">
+<code class="descclassname">logic_circuit.</code><code class="descname">test_circuit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic_circuit.test_circuit" title="Permalink to this definition">¶</a></dt>
+<dd><p>A simple test circuit</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-OT">
+<span id="ot"></span><h2>OT<a class="headerlink" href="#module-OT" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="OT.Receiver">
+<em class="property">class </em><code class="descclassname">OT.</code><code class="descname">Receiver</code><a class="headerlink" href="#OT.Receiver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Oblblivious transfer receiver for AES keys</p>
+<p>Attributes:
+* pk: Public key
+* sk: Secret key</p>
+<dl class="method">
+<dt id="OT.Receiver.challenge">
+<code class="descname">challenge</code><span class="sig-paren">(</span><em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#OT.Receiver.challenge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an OT challenge</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>b</strong> (<em>int</em>) – Message to receive (0 or 1)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">OT challenge</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#elgamal.ElgamalCiphertext" title="elgamal.ElgamalCiphertext">ElgamalCiphertext</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="OT.Receiver.decrypt_response">
+<code class="descname">decrypt_response</code><span class="sig-paren">(</span><em>e_0</em>, <em>e_1</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#OT.Receiver.decrypt_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrypt response received from Sender</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>e_0</strong> (<a class="reference internal" href="#elgamal.ElgamalCiphertext" title="elgamal.ElgamalCiphertext"><em>ElgamalCiphertext</em></a>) – Response part 0</li>
+<li><strong>e_1</strong> (<a class="reference internal" href="#elgamal.ElgamalCiphertext" title="elgamal.ElgamalCiphertext"><em>ElgamalCiphertext</em></a>) – Response part 1</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Transferred message</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#aes.AES_key" title="aes.AES_key">AES_key</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="OT.Sender">
+<em class="property">class </em><code class="descclassname">OT.</code><code class="descname">Sender</code><span class="sig-paren">(</span><em>msg_0</em>, <em>msg_1</em><span class="sig-paren">)</span><a class="headerlink" href="#OT.Sender" title="Permalink to this definition">¶</a></dt>
+<dd><p>Oblblivious transfer sender for AES keys</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>msg_0</strong> (<a class="reference internal" href="#aes.AES_key" title="aes.AES_key"><em>AES_key</em></a>) – Message 0</li>
+<li><strong>msg_1</strong> (<a class="reference internal" href="#aes.AES_key" title="aes.AES_key"><em>AES_key</em></a>) – Message 1</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="OT.Sender.response">
+<code class="descname">response</code><span class="sig-paren">(</span><em>c</em>, <em>pk</em><span class="sig-paren">)</span><a class="headerlink" href="#OT.Sender.response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Response to a challenge sent by the receiver</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>c</strong> (<a class="reference internal" href="#elgamal.ElgamalCiphertext" title="elgamal.ElgamalCiphertext"><em>ElgamalCiphertext</em></a>) – Encrypted challenge</li>
+<li><strong>pk</strong> (<a class="reference internal" href="#elgamal.ElgamalPublicKey" title="elgamal.ElgamalPublicKey"><em>ElgamalPublicKey</em></a>) – Encryption public key</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Encrypted responses e_0, e_1</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(<a class="reference internal" href="#elgamal.ElgamalCiphertext" title="elgamal.ElgamalCiphertext">ElgamalCiphertext</a>, <a class="reference internal" href="#elgamal.ElgamalCiphertext" title="elgamal.ElgamalCiphertext">ElgamalCiphertext</a>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-prs">
+<span id="prs"></span><h2>PRS<a class="headerlink" href="#module-prs" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to MPC’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#api-reference">API Reference</a><ul>
+<li><a class="reference internal" href="#module-aes">AES</a></li>
+<li><a class="reference internal" href="#module-elgamal">El Gamal</a></li>
+<li><a class="reference internal" href="#module-garbled_circuit">Garbled circuit</a></li>
+<li><a class="reference internal" href="#module-logic_circuit">Logic Circuit</a></li>
+<li><a class="reference internal" href="#module-OT">OT</a></li>
+<li><a class="reference internal" href="#module-prs">PRS</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, UCLouvain.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
